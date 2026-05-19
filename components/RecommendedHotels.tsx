@@ -52,17 +52,19 @@ export function RecommendedHotels({ city, hotels, fallbackImageUrl }: Recommende
 
               <div className="min-w-0">
                 <p className="text-xs font-bold text-lagoon">{hotel.area}</p>
-                <h4 className="mt-1 text-sm font-bold leading-5 text-ink">{hotel.name}</h4>
+                <h4 className="mt-1 text-sm font-bold leading-5">
+                  <a
+                    href={hotel.linkUrl}
+                    target="_blank"
+                    rel="sponsored noopener"
+                    className="text-ink underline decoration-blush decoration-2 underline-offset-4 transition hover:text-cocoa"
+                  >
+                    {hotel.name}
+                  </a>
+                </h4>
                 <p className="mt-2 text-xs leading-5 text-cocoa">{hotel.summary}</p>
                 <p className="mt-2 rounded-lg bg-white/80 px-3 py-2 text-xs font-bold leading-5 text-cocoa">{hotel.priceNote}</p>
-                <a
-                  href={hotel.linkUrl}
-                  target="_blank"
-                  rel="sponsored noopener"
-                  className="mt-2 block min-h-10 rounded-lg bg-ink px-3 py-2.5 text-center text-sm font-bold text-white shadow-sm transition hover:bg-cocoa"
-                >
-                  このホテルを見る
-                </a>
+                <p className="mt-2 text-[11px] font-bold text-lagoon">ホテル名から詳細を確認</p>
               </div>
             </article>
           );
