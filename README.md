@@ -47,6 +47,7 @@ data/questions.ts            診断質問と選択肢
 data/destinations.ts         旅行先データ
 data/destinationMedia.ts     旅行先の観光写真・国旗・画像出典
 data/affiliateLinks.ts       アフィリエイトリンク設定
+data/recommendedHotels.ts    旅行先ごとのおすすめホテル表示
 lib/diagnosis.ts             診断スコアリングロジック
 types/diagnosis.ts           型定義
 ```
@@ -98,7 +99,28 @@ hotel: {
 },
 ```
 
-現在は仮URLのみを入れています。実在のアフィリエイトIDは入れていません。`{city}` と `{country}` は診断結果の都市名・国名に自動で置き換わります。
+現在はA8で取得した本番URLを入れています。`{city}` と `{country}` を含むURLを使う場合は、診断結果の都市名・国名に自動で置き換わります。
+
+都市別のホテル・航空券リンクを優先したい場合は、`data/destinationAffiliateLinks.ts` に旅行先IDごとのURLを追加します。
+
+## おすすめホテルの編集方法
+
+`data/recommendedHotels.ts` を編集します。旅行先IDごとにホテルを追加できます。
+
+```ts
+bali: [
+  {
+    name: "ホテル名",
+    area: "エリア名",
+    priceNote: "価格目安",
+    summary: "一言コメント",
+    linkUrl: "A8の商品リンクURLまたは広告主ページURL",
+    imageUrl: "利用許可のあるホテル画像URL",
+  },
+]
+```
+
+ホテル画像が未設定の場合は、その旅行先の観光画像を仮サムネイルとして表示します。A8の商品リンクや広告主が利用を許可している画像素材が取れたら、`imageUrl` に追加してください。`linkUrl` は後からA8の商品リンクURLへ差し替えられる想定です。
 
 ## 画像の差し替え方法
 

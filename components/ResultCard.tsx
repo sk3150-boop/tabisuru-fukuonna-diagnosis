@@ -1,6 +1,8 @@
 import { affiliateLinkOrder, getAffiliateLinksForDestination } from "@/data/affiliateLinks";
 import { destinationFlagCodes, destinationMedia } from "@/data/destinationMedia";
+import { recommendedHotelsByDestination } from "@/data/recommendedHotels";
 import type { RankedDestination } from "@/types/diagnosis";
+import { RecommendedHotels } from "@/components/RecommendedHotels";
 
 type ResultCardProps = {
   destination: RankedDestination;
@@ -12,6 +14,7 @@ export function ResultCard({ destination, rank }: ResultCardProps) {
   const media = destinationMedia[destination.id];
   const flagCode = destinationFlagCodes[destination.id];
   const affiliateLinks = getAffiliateLinksForDestination(destination);
+  const recommendedHotels = recommendedHotelsByDestination[destination.id] ?? [];
 
   return (
     <article className={`overflow-hidden rounded-lg border bg-white shadow-soft ${isTop ? "border-lagoon" : "border-blush/80"}`}>
@@ -84,6 +87,8 @@ export function ResultCard({ destination, rank }: ResultCardProps) {
           <InfoBlock title="注意点" body={destination.caution} />
           <InfoBlock title="向いている旅行者" body={destination.suitedFor} />
         </div>
+
+        <RecommendedHotels city={destination.city} hotels={recommendedHotels} fallbackImageUrl={media?.imageUrl} />
 
         <div className="mt-5 rounded-lg bg-gradient-to-br from-roseMilk to-mist/70 p-4">
           <p className="text-sm font-bold text-ink">旅の準備をする</p>
