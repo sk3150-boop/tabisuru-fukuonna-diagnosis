@@ -23,7 +23,7 @@ export const affiliateLinks: Record<AffiliateLinkKey, AffiliateLinkTemplate> = {
   },
   esim: {
     label: "eSIMを準備する",
-    templateUrl: "https://example.com/affiliate/esim?destination={country}",
+    templateUrl: "https://px.a8.net/svt/ejp?a8mat=4B3UZ2+AGVEPE+5UDW+5YJRM",
   },
   insurance: {
     label: "旅行保険を確認する",
