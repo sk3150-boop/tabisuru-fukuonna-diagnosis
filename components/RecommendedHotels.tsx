@@ -18,7 +18,7 @@ export function RecommendedHotels({ city, hotels, fallbackImageUrl }: Recommende
           <p className="text-xs font-bold tracking-[0.18em] text-lagoon">HOTEL PICKS</p>
           <h3 className="mt-1 text-lg font-bold text-ink">{city}のおすすめホテル3選</h3>
         </div>
-        <span className="shrink-0 rounded-full bg-shell px-3 py-1 text-xs font-bold text-cocoa">試験表示</span>
+        <span className="shrink-0 rounded-full bg-shell px-3 py-1 text-xs font-bold text-cocoa">人気順</span>
       </div>
 
       <div className="mt-4 grid gap-3">
@@ -50,7 +50,7 @@ export function RecommendedHotels({ city, hotels, fallbackImageUrl }: Recommende
                 <a
                   href={hotel.linkUrl}
                   target="_blank"
-                  rel="sponsored noopener noreferrer"
+                  rel="sponsored noopener"
                   className="mt-3 block min-h-11 rounded-lg bg-ink px-4 py-3 text-center text-sm font-bold text-white shadow-sm transition hover:bg-cocoa"
                 >
                   このホテルを見る
@@ -62,7 +62,7 @@ export function RecommendedHotels({ city, hotels, fallbackImageUrl }: Recommende
       </div>
 
       <p className="mt-3 text-xs leading-5 text-cocoa">
-        ホテル料金や空室は検索条件で変わります。表示例として確認し、予約前に最新条件をご確認ください。
+        ホテル料金や空室は検索条件で変わります。気になるホテルは、予約前に最新条件をご確認ください。
       </p>
     </section>
   );
