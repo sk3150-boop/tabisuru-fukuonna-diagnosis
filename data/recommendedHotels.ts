@@ -16,8 +16,8 @@ export const recommendedHotelsByDestination: Record<string, RecommendedHotel[]> 
       priceNote: "1泊1室 44,000円台からの表示例",
       summary: "落ち着いた海辺ステイを楽しみたい人に合いやすい、上質なリゾート候補です。",
       linkUrl: "https://www.skygate.co.jp/hotel/HTLITM/251989/?AgentCode=HTTOP",
-      imageUrl: "https://digital.ihg.com/is/image/ihg/intercontinental-bali-7834443583-2x1?wid=1100",
-      imageAlt: "インターコンチネンタル バリ サヌール リゾート by IHGのプール",
+      imageUrl: "https://digital.ihg.com/is/image/ihg/intercontinental-bali-7818756849-2x1?wid=1100",
+      imageAlt: "インターコンチネンタル バリ サヌール リゾート by IHGの外観空撮",
     },
     {
       name: "ハイアット リージェンシー バリ",
@@ -36,8 +36,8 @@ export const recommendedHotelsByDestination: Record<string, RecommendedHotel[]> 
       summary: "スパや写真映えも楽しみたい、ゆったり派のバリ旅に合う候補です。",
       linkUrl: "https://www.skygate.co.jp/hotel/HTLITM/1188765/?AgentCode=HTTOP",
       imageUrl:
-        "https://mayaresorts.com/assets/images/sanur/accommodation/wonderful-garden-view/homepage-slider-thumbnail/20260129-wonderful-garden-view-hst.webp",
-      imageAlt: "マヤ サヌール リゾート＆スパの客室",
+        "https://mayaresorts.com/assets/images/sanur/facilities/main-swimming-pool/gallery-full/main-swimming-pool-gf-1.webp",
+      imageAlt: "マヤ サヌール リゾート＆スパのインフィニティプール",
     },
   ],
 };
