@@ -35,6 +35,11 @@ export function RecommendedHotels({ city, hotels, fallbackImageUrl }: Recommende
                     className="h-full w-full object-cover"
                     loading="lazy"
                     referrerPolicy="no-referrer"
+                    onError={(event) => {
+                      if (fallbackImageUrl && event.currentTarget.src !== getDisplayImageUrl(fallbackImageUrl)) {
+                        event.currentTarget.src = getDisplayImageUrl(fallbackImageUrl);
+                      }
+                    }}
                   />
                   <span className="absolute left-3 top-3 rounded-full bg-white/92 px-3 py-1 text-xs font-bold text-cocoa shadow-sm">
                     人気{index + 1}位
