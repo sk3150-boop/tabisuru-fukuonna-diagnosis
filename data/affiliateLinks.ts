@@ -15,11 +15,11 @@ type AffiliateLinkTemplate = {
 export const affiliateLinks: Record<AffiliateLinkKey, AffiliateLinkTemplate> = {
   hotel: {
     label: "ホテルを探す",
-    templateUrl: "https://example.com/affiliate/hotel?city={city}&country={country}",
+    templateUrl: "https://px.a8.net/svt/ejp?a8mat=4B3U7A+5Q0036+2YGS+64RJ6",
   },
   flight: {
     label: "航空券を探す",
-    templateUrl: "https://example.com/affiliate/flight?to={city}&country={country}",
+    templateUrl: "https://px.a8.net/svt/ejp?a8mat=4B3U7A+5Q0036+2YGS+5YJRM",
   },
   esim: {
     label: "eSIMを準備する",

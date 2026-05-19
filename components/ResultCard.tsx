@@ -101,7 +101,7 @@ export function ResultCard({ destination, rank }: ResultCardProps) {
                   data-testid={`affiliate-${key}`}
                   href={link.url}
                   target="_blank"
-                  rel="noreferrer"
+                  rel="sponsored noopener noreferrer"
                   className={`min-h-12 rounded-lg border px-4 py-3 text-center text-sm font-bold shadow-sm transition ${
                     isPrimary
                       ? "border-ink bg-ink text-white hover:bg-cocoa"
