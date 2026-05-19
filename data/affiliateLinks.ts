@@ -27,7 +27,7 @@ export const affiliateLinks: Record<AffiliateLinkKey, AffiliateLinkTemplate> = {
   },
   insurance: {
     label: "旅行保険を確認する",
-    templateUrl: "https://example.com/affiliate/insurance?destination={country}",
+    templateUrl: "https://px.a8.net/svt/ejp?a8mat=4B3U7A+5Q0036+2YGS+64RJ6",
   },
   goods: {
     label: "旅行グッズを見る",
