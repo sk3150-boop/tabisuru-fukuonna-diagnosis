@@ -31,7 +31,7 @@ export const affiliateLinks: Record<AffiliateLinkKey, AffiliateLinkTemplate> = {
   },
   goods: {
     label: "旅行グッズを見る",
-    templateUrl: "https://example.com/affiliate/goods?theme=overseas-travel",
+    templateUrl: "https://px.a8.net/svt/ejp?a8mat=4B3UZ2+FJ21TE+5VYU+5YRHE",
   },
 };
 
