@@ -26,9 +26,12 @@ export function RecommendedHotels({ city, hotels, fallbackImageUrl }: Recommende
           const imageUrl = hotel.imageUrl ?? fallbackImageUrl;
 
           return (
-            <article key={hotel.name} className="overflow-hidden rounded-lg border border-blush/70 bg-roseMilk/35">
-              {imageUrl && (
-                <div className="relative h-28 overflow-hidden bg-mist">
+            <article
+              key={hotel.name}
+              className="grid grid-cols-[104px_minmax(0,1fr)] gap-3 rounded-lg border border-blush/70 bg-roseMilk/35 p-3 sm:grid-cols-[112px_minmax(0,1fr)]"
+            >
+              <div className="relative aspect-square overflow-hidden rounded-lg bg-mist">
+                {imageUrl && (
                   <img
                     src={getDisplayImageUrl(imageUrl)}
                     alt={hotel.imageAlt ?? `${hotel.name}のイメージ`}
@@ -41,22 +44,22 @@ export function RecommendedHotels({ city, hotels, fallbackImageUrl }: Recommende
                       }
                     }}
                   />
-                  <span className="absolute left-3 top-3 rounded-full bg-white/92 px-3 py-1 text-xs font-bold text-cocoa shadow-sm">
-                    人気{index + 1}位
-                  </span>
-                </div>
-              )}
+                )}
+                <span className="absolute left-2 top-2 rounded-full bg-white/92 px-2 py-1 text-[11px] font-bold text-cocoa shadow-sm">
+                  人気{index + 1}位
+                </span>
+              </div>
 
-              <div className="p-3">
+              <div className="min-w-0">
                 <p className="text-xs font-bold text-lagoon">{hotel.area}</p>
-                <h4 className="mt-1 text-sm font-bold leading-6 text-ink">{hotel.name}</h4>
+                <h4 className="mt-1 text-sm font-bold leading-5 text-ink">{hotel.name}</h4>
                 <p className="mt-2 text-xs leading-5 text-cocoa">{hotel.summary}</p>
-                <p className="mt-2 rounded-lg bg-white/80 px-3 py-2 text-xs font-bold text-cocoa">{hotel.priceNote}</p>
+                <p className="mt-2 rounded-lg bg-white/80 px-3 py-2 text-xs font-bold leading-5 text-cocoa">{hotel.priceNote}</p>
                 <a
                   href={hotel.linkUrl}
                   target="_blank"
                   rel="sponsored noopener"
-                  className="mt-3 block min-h-11 rounded-lg bg-ink px-4 py-3 text-center text-sm font-bold text-white shadow-sm transition hover:bg-cocoa"
+                  className="mt-2 block min-h-10 rounded-lg bg-ink px-3 py-2.5 text-center text-sm font-bold text-white shadow-sm transition hover:bg-cocoa"
                 >
                   このホテルを見る
                 </a>
