@@ -88,7 +88,7 @@ export function ResultCard({ destination, rank }: ResultCardProps) {
         <div className="mt-5 rounded-lg bg-gradient-to-br from-roseMilk to-mist/70 p-4">
           <p className="text-sm font-bold text-ink">旅の準備をする</p>
           <p className="mt-1 text-xs leading-5 text-cocoa">
-            まずは宿泊先から見ると、旅の予算感をつかみやすいです。
+            まずは「{destination.city} ホテル」「{destination.city} 航空券」の相場を見ると、旅の予算感をつかみやすいです。
           </p>
           <div className="mt-3 grid gap-2">
             {affiliateLinkOrder.map((key) => {

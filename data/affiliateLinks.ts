@@ -1,3 +1,4 @@
+import { destinationAffiliateLinks } from "@/data/destinationAffiliateLinks";
 import type { Destination } from "@/types/diagnosis";
 
 export type AffiliateLinkKey = "hotel" | "flight" | "esim" | "insurance" | "goods";
@@ -44,6 +45,7 @@ export const affiliateLinkOrder: AffiliateLinkKey[] = [
 ];
 
 export const getAffiliateLinksForDestination = (destination: Destination): Record<AffiliateLinkKey, AffiliateLink> => {
+  const destinationLinks = destinationAffiliateLinks[destination.id] ?? {};
   const values = {
     city: encodeURIComponent(destination.city),
     country: encodeURIComponent(destination.country),
@@ -53,11 +55,23 @@ export const getAffiliateLinksForDestination = (destination: Destination): Recor
     Object.entries(affiliateLinks).map(([key, link]) => [
       key,
       {
-        label: link.label,
-        url: link.templateUrl
+        label: getDestinationAwareLabel(key as AffiliateLinkKey, link.label, destination),
+        url: (destinationLinks[key as AffiliateLinkKey] ?? link.templateUrl)
           .replaceAll("{city}", values.city)
           .replaceAll("{country}", values.country),
       },
     ]),
   ) as Record<AffiliateLinkKey, AffiliateLink>;
 };
+
+function getDestinationAwareLabel(key: AffiliateLinkKey, fallbackLabel: string, destination: Destination) {
+  if (key === "hotel") {
+    return `${destination.city}のホテルを探す`;
+  }
+
+  if (key === "flight") {
+    return `${destination.city}行き航空券を探す`;
+  }
+
+  return fallbackLabel;
+}
