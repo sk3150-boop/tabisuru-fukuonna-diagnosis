@@ -43,6 +43,7 @@ npm run typecheck
 ```text
 app/page.tsx                 画面全体の状態管理
 components/                  トップ、質問、結果、免責などのUI部品
+components/A8LinkManager.tsx A8リンクマネージャータグ
 data/questions.ts            診断質問と選択肢
 data/destinations.ts         旅行先データ
 data/destinationMedia.ts     旅行先の観光写真・国旗・画像出典
@@ -121,6 +122,8 @@ bali: [
 ```
 
 ホテル画像が未設定の場合は、その旅行先の観光画像を仮サムネイルとして表示します。A8の商品リンクや広告主が利用を許可している画像素材が取れたら、`imageUrl` に追加してください。`linkUrl` は後からA8の商品リンクURLへ差し替えられる想定です。
+
+ホテル詳細ページなど広告主サイトへの通常URLを使う場合は、`components/A8LinkManager.tsx` のA8リンクマネージャー設定でA8リンクへ自動変換する想定です。A8管理画面で発行されたタグの `config_id` が変わった場合は、このファイルの `A8_LINK_MANAGER_CONFIG_ID` を差し替えてください。
 
 ## 画像の差し替え方法
 

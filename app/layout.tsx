@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { A8LinkManager } from "@/components/A8LinkManager";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -14,7 +15,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="ja">
-      <body>{children}</body>
+      <body>
+        {children}
+        <A8LinkManager />
+      </body>
     </html>
   );
 }
