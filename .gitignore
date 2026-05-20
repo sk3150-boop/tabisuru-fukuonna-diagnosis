@@ -10,3 +10,4 @@ pnpm-debug.log*
 *.log
 *.tsbuildinfo
 verification/*.png
+.chrome-a8-profile/
