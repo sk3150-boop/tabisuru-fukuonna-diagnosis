@@ -38,6 +38,35 @@ export const recommendedHotelsByDestination: Record<string, RecommendedHotel[]> 
       imageAlt: "グランド ハイアット台北のホテル画像",
     },
   ],
+  seoul: [
+    {
+      name: "ソラリア 西鉄 ホテル ソウル 明洞",
+      area: "明洞",
+      priceNote: "初めてのソウルでも選びやすい日系ホテル",
+      summary: "明洞中心部に滞在でき、日本語対応や安心感を重視したい女子旅・初韓国に向いています。",
+      linkUrl: "https://www.skygate.co.jp/hotel/HTLITM/1189059/?AgentCode=HTTOP",
+      imageUrl: "https://i.travelapi.com/lodging/10000000/9770000/9761300/9761216/0127b408_z.jpg",
+      imageAlt: "ソラリア 西鉄 ホテル ソウル 明洞のホテル画像",
+    },
+    {
+      name: "L7 明洞",
+      area: "明洞",
+      priceNote: "買い物と街歩きを楽しみたい人向け",
+      summary: "明洞通りに近く、短期でもカフェ・買い物・グルメを動きやすく組み立てられます。",
+      linkUrl: "https://www.skygate.co.jp/hotel/HTLITM/1300551/?AgentCode=HTTOP",
+      imageUrl: "https://i.travelapi.com/lodging/13000000/12520000/12511700/12511672/aff7da07_z.jpg",
+      imageAlt: "L7 明洞のホテル画像",
+    },
+    {
+      name: "アロフト・ソウル明洞",
+      area: "明洞",
+      priceNote: "スタイリッシュなホテルに泊まりたい人向け",
+      summary: "観光にも買い物にも使いやすい立地で、デザイン性と快適さをほどよく重視できます。",
+      linkUrl: "https://www.skygate.co.jp/hotel/HTLITM/1715612/?AgentCode=HTTOP",
+      imageUrl: "https://i.travelapi.com/lodging/17000000/16610000/16606300/16606220/c0fdd0c0_z.jpg",
+      imageAlt: "アロフト・ソウル明洞のホテル画像",
+    },
+  ],
   bali: [
     {
       name: "インターコンチネンタル バリ サヌール リゾート by IHG",

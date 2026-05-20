@@ -6,6 +6,9 @@ export const destinationAffiliateLinks: Record<string, DestinationAffiliateLinks
   taipei: {
     hotel: "https://www.skygate.co.jp/hotel/LIST/6226684/?AgentCode=HTTOP",
   },
+  seoul: {
+    hotel: "https://www.skygate.co.jp/hotel/HTLCTY/SEL/?AgentCode=HTTOP",
+  },
   bali: {
     hotel: "https://www.skygate.co.jp/hotel/list?regionId=1054&form=research&sort=1&AgentCode=HTTOP&preAgentCode=HTTOP",
   },
