@@ -67,6 +67,35 @@ export const recommendedHotelsByDestination: Record<string, RecommendedHotel[]> 
       imageAlt: "アロフト・ソウル明洞のホテル画像",
     },
   ],
+  bangkok: [
+    {
+      name: "マリオット バンコク スクンビット",
+      area: "スクンビット",
+      priceNote: "ホテルステイも楽しみたい大人旅向け",
+      summary: "BTS沿線で動きやすく、スパやルーフトップも楽しみたい非日常のバンコク旅に合います。",
+      linkUrl: "https://www.skygate.co.jp/hotel/HTLITM/259544/?AgentCode=HTTOP",
+      imageUrl: "https://i.travelapi.com/lodging/6000000/5800000/5795000/5794999/bc7a021b_z.jpg",
+      imageAlt: "マリオット バンコク スクンビットのホテル画像",
+    },
+    {
+      name: "ザ ウェスティン グランデ スクンビット バンコク",
+      area: "アソーク",
+      priceNote: "観光と買い物の移動しやすさ重視の人向け",
+      summary: "ターミナル21周辺に滞在したい人に選びやすく、初バンコクでも行動計画を立てやすい立地です。",
+      linkUrl: "https://www.skygate.co.jp/hotel/HTLITM/167186/?AgentCode=HTTOP",
+      imageUrl: "https://i.travelapi.com/lodging/1000000/380000/372400/372351/a23a5767_z.jpg",
+      imageAlt: "ザ ウェスティン グランデ スクンビット バンコクのホテル画像",
+    },
+    {
+      name: "ザ ランドマーク バンコク",
+      area: "ナナ",
+      priceNote: "駅近で便利な滞在を選びたい人向け",
+      summary: "BTSナナ駅近くで移動しやすく、街歩きやグルメを効率よく楽しみたい旅に向いています。",
+      linkUrl: "https://www.skygate.co.jp/hotel/HTLITM/16210/?AgentCode=HTTOP",
+      imageUrl: "https://i.travelapi.com/lodging/1000000/30000/20300/20211/83e2e94b_z.jpg",
+      imageAlt: "ザ ランドマーク バンコクのホテル画像",
+    },
+  ],
   bali: [
     {
       name: "インターコンチネンタル バリ サヌール リゾート by IHG",
