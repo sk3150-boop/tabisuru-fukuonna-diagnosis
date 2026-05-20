@@ -67,6 +67,29 @@ export const recommendedHotelsByDestination: Record<string, RecommendedHotel[]> 
       imageAlt: "アロフト・ソウル明洞のホテル画像",
     },
   ],
+  busan: [
+    {
+      name: "ソラリア西鉄ホテル釜山",
+      area: "西面",
+      priceNote: "街歩きと買い物を重視したい人向け",
+      summary: "西面エリアに泊まれるため、グルメ、買い物、地下鉄移動をまとめて楽しみやすいホテルです。",
+      linkUrl: "https://www.skygate.co.jp/hotel/HTLITM/1722565/?AgentCode=HTTOP",
+    },
+    {
+      name: "Lavide Atlan Hotel 2",
+      area: "海雲台",
+      priceNote: "海辺の雰囲気も楽しみたい人向け",
+      summary: "海雲台ビーチに近く、釜山らしいリゾート感と観光のしやすさを両方取り入れやすい立地です。",
+      linkUrl: "https://www.skygate.co.jp/hotel/HTLITM/3255312/?AgentCode=HTTOP",
+    },
+    {
+      name: "LCT Residence Y Collection",
+      area: "海雲台",
+      priceNote: "ゆったり滞在や家族旅にも向く上質ステイ",
+      summary: "海雲台周辺で広めの滞在先を選びたいときに候補にしやすく、景色重視の旅にも合います。",
+      linkUrl: "https://www.skygate.co.jp/hotel/HTLITM/3508858/?AgentCode=HTTOP",
+    },
+  ],
   bangkok: [
     {
       name: "マリオット バンコク スクンビット",
@@ -125,6 +148,98 @@ export const recommendedHotelsByDestination: Record<string, RecommendedHotel[]> 
       imageAlt: "グランド コプソーン ウォーターフロント ホテル シンガポールのホテル画像",
     },
   ],
+  "kuala-lumpur": [
+    {
+      name: "ホテル ロイヤル クアラルンプール",
+      area: "ブキッビンタン",
+      priceNote: "買い物と街歩きをしやすくしたい人向け",
+      summary: "ブキッビンタン周辺に泊まれるため、ショッピング、屋台、カフェ巡りを組み合わせやすいホテルです。",
+      linkUrl: "https://www.skygate.co.jp/hotel/HTLITM/17333/?AgentCode=HTTOP",
+    },
+    {
+      name: "ロイヤルスイーツ アット プラチナム クアラルンプール ブキッビンタン KLCC",
+      area: "ゴールデン トライアングル",
+      priceNote: "夜景や高層ホテル感を楽しみたい人向け",
+      summary: "KLCCや中心部への動きやすさがあり、都市型ステイを楽しみたい旅に合わせやすい候補です。",
+      linkUrl: "https://www.skygate.co.jp/hotel/HTLITM/1743437/?AgentCode=HTTOP",
+    },
+    {
+      name: "M リゾート & ホテル",
+      area: "ブキット キアラ",
+      priceNote: "落ち着いた滞在を重視したい人向け",
+      summary: "中心部のにぎやかさから少し離れ、ホテル時間も大切にしたい人に向いています。",
+      linkUrl: "https://www.skygate.co.jp/hotel/HTLITM/3218171/?AgentCode=HTTOP",
+    },
+  ],
+  "hong-kong": [
+    {
+      name: "ザ ロイヤル ガーデン",
+      area: "尖沙咀",
+      priceNote: "観光とホテルの快適さを両立したい人向け",
+      summary: "尖沙咀周辺に泊まれるため、夜景、ショッピング、街歩きを効率よく楽しみやすいホテルです。",
+      linkUrl: "https://www.skygate.co.jp/hotel/HTLITM/59156/?AgentCode=HTTOP",
+    },
+    {
+      name: "ザ カオルーン ホテル",
+      area: "尖沙咀",
+      priceNote: "駅近で動きやすいホテルを選びたい人向け",
+      summary: "尖沙咀駅周辺で移動しやすく、短い日数でも香港観光を詰め込みやすい候補です。",
+      linkUrl: "https://www.skygate.co.jp/hotel/HTLITM/166350/?AgentCode=HTTOP",
+    },
+    {
+      name: "ページ 148 ページ ホテルズ",
+      area: "尖沙咀",
+      priceNote: "すっきりした雰囲気の滞在先を選びたい人向け",
+      summary: "廟街夜市やハーバーシティ方面へ動きやすく、街歩き中心の香港旅に合わせやすいホテルです。",
+      linkUrl: "https://www.skygate.co.jp/hotel/HTLITM/2230615/?AgentCode=HTTOP",
+    },
+  ],
+  "da-nang": [
+    {
+      name: "ハイアット リージェンシー ダナン リゾート アンド スパ",
+      area: "グーハインソン",
+      priceNote: "海沿いリゾートをしっかり楽しみたい人向け",
+      summary: "ビーチリゾート感があり、ホテルステイと観光をバランスよく楽しみたいダナン旅に合います。",
+      linkUrl: "https://www.skygate.co.jp/hotel/HTLITM/182900/?AgentCode=HTTOP",
+    },
+    {
+      name: "ステラ マリス ビーチ ダナン",
+      area: "ミーケービーチ周辺",
+      priceNote: "ビーチ近くでコスパも見たい人向け",
+      summary: "ミーケービーチ周辺を拠点にしやすく、海、カフェ、街歩きを気軽に組み合わせられます。",
+      linkUrl: "https://www.skygate.co.jp/hotel/HTLITM/2814590/?AgentCode=HTTOP",
+    },
+    {
+      name: "ナミ ブティック ホテル & アパートメント",
+      area: "プオック ミー",
+      priceNote: "気軽な滞在と動きやすさを重視したい人向け",
+      summary: "ビーチや市内方面へ移動しやすく、予算を抑えながらダナンを楽しみたい旅に向いています。",
+      linkUrl: "https://www.skygate.co.jp/hotel/HTLITM/3527022/?AgentCode=HTTOP",
+    },
+  ],
+  "hoi-an": [
+    {
+      name: "ホテル ロイヤル ホイアン",
+      area: "ホイアン",
+      priceNote: "旧市街とホテル時間を両方楽しみたい人向け",
+      summary: "ホイアンらしい街歩きと、落ち着いたホテル滞在を組み合わせたい旅に使いやすい候補です。",
+      linkUrl: "https://www.skygate.co.jp/hotel/HTLITM/923100/?AgentCode=HTTOP",
+    },
+    {
+      name: "アナンタラ ホイアン リゾート",
+      area: "ホイアン シティ センター",
+      priceNote: "記念旅行や上質な滞在を選びたい人向け",
+      summary: "中心部に近く、ホイアンの街並みとリゾート感をゆったり楽しみたい人に向いています。",
+      linkUrl: "https://www.skygate.co.jp/hotel/HTLITM/142486/?AgentCode=HTTOP",
+    },
+    {
+      name: "コイ リゾート アンド スパ ホイアン",
+      area: "クア ダイ",
+      priceNote: "スパやリゾート感を重視したい人向け",
+      summary: "にぎやかな中心部だけでなく、ゆっくり過ごす時間も取りたいホイアン旅に合わせやすいホテルです。",
+      linkUrl: "https://www.skygate.co.jp/hotel/HTLITM/1719028/?AgentCode=HTTOP",
+    },
+  ],
   bali: [
     {
       name: "インターコンチネンタル バリ サヌール リゾート by IHG",
@@ -154,6 +269,75 @@ export const recommendedHotelsByDestination: Record<string, RecommendedHotel[]> 
       imageUrl:
         "https://i.travelapi.com/lodging/10000000/9730000/9725600/9725575/9695098a_z.jpg",
       imageAlt: "マヤ サヌール リゾート＆スパのホテル画像",
+    },
+  ],
+  hanoi: [
+    {
+      name: "ジ エンバシー ホテル ハノイ",
+      area: "オールド クォーター",
+      priceNote: "初めてのハノイで観光しやすくしたい人向け",
+      summary: "ホアンキエム湖や水上人形劇場へ動きやすく、旧市街を中心に歩きたい旅に向いています。",
+      linkUrl: "https://www.skygate.co.jp/hotel/HTLITM/3534163/?AgentCode=HTTOP",
+    },
+    {
+      name: "ハノイ ル シャトー ホテル & スパ",
+      area: "オールド クォーター",
+      priceNote: "旧市街ステイとスパ感を楽しみたい人向け",
+      summary: "ナイトマーケットやホアンキエム湖に近く、短い滞在でもハノイらしさを感じやすい候補です。",
+      linkUrl: "https://www.skygate.co.jp/hotel/HTLITM/3435591/?AgentCode=HTTOP",
+    },
+    {
+      name: "ヒルトン ガーデン イン ハノイ",
+      area: "ホアンキエム",
+      priceNote: "安心感のあるホテルブランドを選びたい人向け",
+      summary: "中心部観光に動きやすく、ホテルの安定感も重視したいハノイ旅に合わせやすいホテルです。",
+      linkUrl: "https://www.skygate.co.jp/hotel/HTLITM/249777/?AgentCode=HTTOP",
+    },
+  ],
+  "ho-chi-minh": [
+    {
+      name: "M ビレッジ ホテル トン タット ダム",
+      area: "1区",
+      priceNote: "中心部で街歩きを楽しみたい人向け",
+      summary: "サイゴンスクエアやドンコイ通りへ歩きやすく、カフェ、買い物、観光をまとめやすい立地です。",
+      linkUrl: "https://www.skygate.co.jp/hotel/HTLITM/3565838/?AgentCode=HTTOP",
+    },
+    {
+      name: "サイゴン プリンス ホテル",
+      area: "グエンフエ通り",
+      priceNote: "王道観光を効率よく回りたい人向け",
+      summary: "ドンコイ通りやベンタイン市場方面へ動きやすく、初めてのホーチミンにも選びやすいホテルです。",
+      linkUrl: "https://www.skygate.co.jp/hotel/HTLITM/5901/?AgentCode=HTTOP",
+    },
+    {
+      name: "ダイナムブティックホテル",
+      area: "1区",
+      priceNote: "価格と中心部アクセスのバランスを見たい人向け",
+      summary: "中心部を拠点にしながら、予算を抑えた滞在先も検討したい人に向いています。",
+      linkUrl: "https://www.skygate.co.jp/hotel/HTLITM/58247/?AgentCode=HTTOP",
+    },
+  ],
+  macau: [
+    {
+      name: "ハーバービュー ホテル マカオ",
+      area: "マカオ",
+      priceNote: "雰囲気のあるホテルで観光したい人向け",
+      summary: "マカオらしい上質感を取り入れつつ、街歩きやカジノ周辺観光にも合わせやすい候補です。",
+      linkUrl: "https://www.skygate.co.jp/hotel/HTLITM/1189945/?AgentCode=HTTOP",
+    },
+    {
+      name: "ニュー オリエント ランドマーク ホテル",
+      area: "マカオ",
+      priceNote: "観光とホテル感のバランスを見たい人向け",
+      summary: "中心部を拠点にしやすく、短いマカオ滞在でも動きやすいホテル候補です。",
+      linkUrl: "https://www.skygate.co.jp/hotel/HTLITM/683232/?AgentCode=HTTOP",
+    },
+    {
+      name: "ハーバービュー ホテル",
+      area: "マカオ",
+      priceNote: "落ち着いた雰囲気で泊まりたい人向け",
+      summary: "観光の拠点にしながら、ホテルの世界観も楽しみたいマカオ旅に合わせやすい候補です。",
+      linkUrl: "https://www.skygate.co.jp/hotel/HTLITM/1192813/?AgentCode=HTTOP",
     },
   ],
 };
