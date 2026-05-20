@@ -30,7 +30,13 @@ export function RecommendedHotels({ city, hotels, fallbackImageUrl }: Recommende
               key={hotel.name}
               className="grid grid-cols-[104px_minmax(0,1fr)] gap-3 rounded-lg border border-blush/70 bg-roseMilk/35 p-3 sm:grid-cols-[112px_minmax(0,1fr)]"
             >
-              <div className="relative aspect-square overflow-hidden rounded-lg bg-mist">
+              <a
+                href={hotel.linkUrl}
+                target="_blank"
+                rel="sponsored noopener"
+                aria-label={`${hotel.name}の詳細を見る`}
+                className="relative aspect-square overflow-hidden rounded-lg bg-mist transition hover:opacity-90"
+              >
                 {imageUrl && (
                   <img
                     src={getDisplayImageUrl(imageUrl)}
@@ -48,7 +54,7 @@ export function RecommendedHotels({ city, hotels, fallbackImageUrl }: Recommende
                 <span className="absolute left-2 top-2 rounded-full border border-white/90 bg-[#211818]/95 px-2.5 py-1.5 text-[11px] font-bold leading-none text-white shadow-[0_6px_18px_rgba(0,0,0,0.6)]">
                   人気{index + 1}位
                 </span>
-              </div>
+              </a>
 
               <div className="min-w-0">
                 <p className="text-xs font-bold text-lagoon">{hotel.area}</p>
@@ -64,7 +70,6 @@ export function RecommendedHotels({ city, hotels, fallbackImageUrl }: Recommende
                 </h4>
                 <p className="mt-2 text-xs leading-5 text-cocoa">{hotel.summary}</p>
                 <p className="mt-2 rounded-lg bg-white/80 px-3 py-2 text-xs font-bold leading-5 text-cocoa">{hotel.priceNote}</p>
-                <p className="mt-2 text-[11px] font-bold text-lagoon">ホテル名から詳細を確認</p>
               </div>
             </article>
           );
