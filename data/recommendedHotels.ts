@@ -20,6 +20,12 @@ function cityHotelLink(destinationId: string) {
   return link;
 }
 
+function airTripHotelLink(hotelId: string) {
+  const targetUrl = `https://www.skygate.co.jp/hotel/HTLITM/${hotelId}/?AgentCode=HTTOP`;
+
+  return `https://px.a8.net/svt/ejp?a8mat=4B3U7A+5Q00UY+2YGS+BW0YB&a8ejpredirect=${encodeURIComponent(targetUrl)}`;
+}
+
 export const recommendedHotelsByDestination: Record<string, RecommendedHotel[]> = {
   taipei: [
     {
@@ -607,48 +613,48 @@ export const recommendedHotelsByDestination: Record<string, RecommendedHotel[]> 
   ],
   paris: [
     {
-      name: "オペラ周辺ホテル",
-      area: "オペラ",
-      priceNote: "買い物と観光のしやすさを重視したい人向け",
-      summary: "百貨店やメトロ移動に便利で、初めてのパリでも予定を組み立てやすいエリアです。",
-      linkUrl: cityHotelLink("paris"),
+      name: "インターコンチネンタル パリ シャンゼリゼ by IHG",
+      area: "シャンゼリゼ",
+      priceNote: "王道パリとホテルの特別感を重視したい人向け",
+      summary: "シャンゼリゼ周辺を拠点にしやすく、買い物や名所巡りを華やかに楽しみたい旅に合います。",
+      linkUrl: airTripHotelLink("51343"),
     },
     {
-      name: "サンジェルマン周辺ホテル",
-      area: "サンジェルマン",
-      priceNote: "カフェと街歩きを楽しみたい人向け",
-      summary: "落ち着いた雰囲気のカフェやショップを巡りやすく、大人のパリ旅に合います。",
-      linkUrl: cityHotelLink("paris"),
+      name: "シタディーヌ レ アール パリ",
+      area: "レ アール",
+      priceNote: "観光と暮らすような滞在を両立したい人向け",
+      summary: "ルーブル方面や地下鉄移動を組み立てやすく、街歩き中心のパリ旅に使いやすい候補です。",
+      linkUrl: airTripHotelLink("145416"),
     },
     {
-      name: "マレ地区周辺ホテル",
-      area: "マレ",
-      priceNote: "雑貨、アート、写真映えを重視したい人向け",
-      summary: "ブティックや美術館を巡りやすく、少し感度の高い街歩きを楽しみたい人に向いています。",
-      linkUrl: cityHotelLink("paris"),
+      name: "ニュー ホテル オペラ",
+      area: "オペラ周辺",
+      priceNote: "価格と中心部アクセスのバランスを見たい人向け",
+      summary: "オペラ方面へ動きやすく、買い物、カフェ、美術館めぐりを無理なく組み合わせやすいホテルです。",
+      linkUrl: airTripHotelLink("542132"),
     },
   ],
   rome: [
     {
-      name: "テルミニ駅周辺ホテル",
+      name: "ホテル ディンギルテッラ ローマ - スターホテルズ コレツィオーネ",
+      area: "ローマ中心部",
+      priceNote: "王道ローマを上質に楽しみたい人向け",
+      summary: "スペイン広場や中心部観光に動きやすく、記念旅行や大人の街歩きにも合わせやすい候補です。",
+      linkUrl: airTripHotelLink("9428"),
+    },
+    {
+      name: "マスター トレビ",
+      area: "トレビの泉周辺",
+      priceNote: "名所近くで観光しやすくしたい人向け",
+      summary: "トレビの泉周辺を拠点にしやすく、短い滞在でもローマらしい景色を楽しみやすいホテルです。",
+      linkUrl: airTripHotelLink("3498968"),
+    },
+    {
+      name: "メディチ ローマ ホテル",
       area: "テルミニ",
-      priceNote: "移動のしやすさを重視したい人向け",
-      summary: "鉄道や地下鉄で動きやすく、ローマ滞在の拠点として使いやすいエリアです。",
-      linkUrl: cityHotelLink("rome"),
-    },
-    {
-      name: "スペイン広場周辺ホテル",
-      area: "スペイン広場",
-      priceNote: "買い物と王道観光を楽しみたい人向け",
-      summary: "ブランド店や観光名所に近く、華やかなローマ旅を楽しみたい人に合います。",
-      linkUrl: cityHotelLink("rome"),
-    },
-    {
-      name: "ナヴォーナ広場周辺ホテル",
-      area: "ナヴォーナ",
-      priceNote: "歴史ある街歩きを重視したい人向け",
-      summary: "石畳の路地や広場を楽しみやすく、夜の散策も含めてローマらしさを味わえます。",
-      linkUrl: cityHotelLink("rome"),
+      priceNote: "移動しやすさと価格感を見たい人向け",
+      summary: "テルミニ駅方面を使いやすく、鉄道移動や他都市周遊も考えるローマ旅に向いています。",
+      linkUrl: airTripHotelLink("528700"),
     },
   ],
   florence: [
@@ -676,25 +682,25 @@ export const recommendedHotelsByDestination: Record<string, RecommendedHotel[]> 
   ],
   barcelona: [
     {
-      name: "カタルーニャ広場周辺ホテル",
-      area: "中心部",
+      name: "カタロニア プラザ カタルーニャ",
+      area: "カタルーニャ広場",
       priceNote: "初めてのバルセロナで動きやすくしたい人向け",
-      summary: "地下鉄や空港バスを使いやすく、観光、買い物、食事を組み合わせやすい拠点です。",
-      linkUrl: cityHotelLink("barcelona"),
+      summary: "中心部に泊まりやすく、観光、買い物、食事をまとめて楽しみたい旅に使いやすいホテルです。",
+      linkUrl: airTripHotelLink("663386"),
     },
     {
-      name: "グラシア通り周辺ホテル",
-      area: "グラシア通り",
-      priceNote: "建築と買い物を楽しみたい人向け",
-      summary: "カサ・バトリョ周辺へ動きやすく、街歩きの満足度が高いエリアです。",
-      linkUrl: cityHotelLink("barcelona"),
+      name: "W バルセロナ",
+      area: "バルセロネータ",
+      priceNote: "海沿いの特別感と写真映えを重視したい人向け",
+      summary: "海辺の景色とホテルステイを楽しみやすく、記念旅行やリゾート感のある滞在に合います。",
+      linkUrl: airTripHotelLink("54586"),
     },
     {
-      name: "サグラダ・ファミリア周辺ホテル",
-      area: "サグラダ・ファミリア",
-      priceNote: "有名観光地を近くで楽しみたい人向け",
-      summary: "朝や夕方のサグラダ・ファミリアを見に行きやすく、観光の特別感を出しやすい候補です。",
-      linkUrl: cityHotelLink("barcelona"),
+      name: "ホテル カレドニアン",
+      area: "エイサンプル",
+      priceNote: "街歩きと価格のバランスを見たい人向け",
+      summary: "中心部へ動きやすく、建築めぐりや買い物を無理なく組み合わせたい旅に向いています。",
+      linkUrl: airTripHotelLink("5997"),
     },
   ],
   vienna: [

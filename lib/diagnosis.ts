@@ -5,6 +5,8 @@ import type { Answers, Destination, RankedDestination } from "@/types/diagnosis"
 const TAG_MATCH_POINTS = 10;
 const AVOID_TAG_PENALTY = 18;
 const VISITED_REGION_PENALTY = 16;
+const FAMOUS_HIDDEN_GEM_MISMATCH_PENALTY = 14;
+const HIDDEN_FAMOUS_MISMATCH_PENALTY = 10;
 
 const getSelectedOptions = (answers: Answers) =>
   questions.flatMap((question) => {
@@ -62,6 +64,16 @@ const scoreDestination = (destination: Destination, answers: Answers): RankedDes
     return total + hits.length * AVOID_TAG_PENALTY;
   }, 0);
 
+  const famousMismatchPenalty =
+    selectedOptions.some((option) => option.id === "famous") &&
+    destination.tags.includes("穴場") &&
+    !destination.tags.includes("有名観光地")
+      ? FAMOUS_HIDDEN_GEM_MISMATCH_PENALTY
+      : 0;
+  const hiddenMismatchPenalty =
+    selectedOptions.some((option) => option.id === "hidden") && destination.tags.includes("有名観光地")
+      ? HIDDEN_FAMOUS_MISMATCH_PENALTY
+      : 0;
   const visitedRegionPenalty = getVisitedRegionPenalty(destination, answers);
   const balancedQuality =
     destination.scores.safety * 0.35 +
@@ -71,7 +83,15 @@ const scoreDestination = (destination: Destination, answers: Answers): RankedDes
 
   return {
     ...destination,
-    matchScore: Math.round(matchPoints + scoreBoostPoints + balancedQuality - avoidPenalty - visitedRegionPenalty),
+    matchScore: Math.round(
+      matchPoints +
+        scoreBoostPoints +
+        balancedQuality -
+        avoidPenalty -
+        visitedRegionPenalty -
+        famousMismatchPenalty -
+        hiddenMismatchPenalty,
+    ),
     matchedTags: unique(matchedTags).slice(0, 6),
   };
 };
