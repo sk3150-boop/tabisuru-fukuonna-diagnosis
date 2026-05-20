@@ -16,7 +16,7 @@ export function RecommendedHotels({ city, hotels, fallbackImageUrl }: Recommende
       <div className="flex items-end justify-between gap-3">
         <div>
           <p className="text-xs font-bold tracking-[0.18em] text-lagoon">HOTEL PICKS</p>
-          <h3 className="mt-1 text-lg font-bold text-ink">{city}のおすすめホテル3選</h3>
+          <h3 className="mt-1 whitespace-nowrap text-base font-bold text-ink sm:text-lg">{city}のおすすめホテル3選</h3>
         </div>
         <span className="shrink-0 rounded-full bg-shell px-3 py-1 text-xs font-bold text-cocoa">人気順</span>
       </div>
@@ -45,7 +45,7 @@ export function RecommendedHotels({ city, hotels, fallbackImageUrl }: Recommende
                     }}
                   />
                 )}
-                <span className="absolute left-2 top-2 rounded-full bg-[#2d2424] px-2.5 py-1.5 text-[11px] font-bold leading-none text-white shadow-[0_4px_14px_rgba(0,0,0,0.35)] ring-1 ring-white/75">
+                <span className="absolute left-2 top-2 rounded-full border border-white/90 bg-[#211818]/95 px-2.5 py-1.5 text-[11px] font-bold leading-none text-white shadow-[0_6px_18px_rgba(0,0,0,0.6)]">
                   人気{index + 1}位
                 </span>
               </div>
@@ -79,17 +79,5 @@ export function RecommendedHotels({ city, hotels, fallbackImageUrl }: Recommende
 }
 
 function getDisplayImageUrl(imageUrl: string) {
-  if (!imageUrl.includes("upload.wikimedia.org")) {
-    return imageUrl;
-  }
-
-  const url = new URL(imageUrl);
-  const parts = url.pathname.split("/").filter(Boolean);
-  const fileName = parts.includes("thumb") ? parts.at(-2) : parts.at(-1);
-
-  if (!fileName) {
-    return imageUrl;
-  }
-
-  return `https://commons.wikimedia.org/wiki/Special:FilePath/${fileName}?width=900`;
+  return imageUrl;
 }

@@ -36,6 +36,12 @@ npm run build
 npm run typecheck
 ```
 
+日本語テキストに文字化けの疑いがないか確認する場合は以下です。
+
+```bash
+npm run check:encoding
+```
+
 ## ファイル構成
 
 主に編集するファイルは以下です。

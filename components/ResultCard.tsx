@@ -24,7 +24,7 @@ export function ResultCard({ destination, rank }: ResultCardProps) {
           <img
             src={getDisplayImageUrl(media.imageUrl)}
             alt={media.imageAlt}
-            className="destination-photo h-full w-full object-cover"
+            className="destination-photo h-full w-full object-cover object-[center_60%]"
             loading="eager"
             onError={(event) => {
               event.currentTarget.src = "/images/top-banner.png";
@@ -82,6 +82,10 @@ export function ResultCard({ destination, rank }: ResultCardProps) {
           {destination.summary}
         </p>
 
+        <p className="mt-3 rounded-lg bg-shell/65 px-4 py-3 text-sm leading-7 text-cocoa">
+          {buildResultNarrative(destination, isTop)}
+        </p>
+
         <div className="mt-5 grid gap-3 text-sm leading-7">
           <InfoBlock title="おすすめ理由" body={destination.recommendedReason} />
           <InfoBlock title="注意点" body={destination.caution} />
@@ -125,19 +129,15 @@ export function ResultCard({ destination, rank }: ResultCardProps) {
 }
 
 function getDisplayImageUrl(imageUrl: string) {
-  if (!imageUrl.includes("upload.wikimedia.org")) {
-    return imageUrl;
-  }
+  return imageUrl;
+}
 
-  const url = new URL(imageUrl);
-  const parts = url.pathname.split("/").filter(Boolean);
-  const fileName = parts.includes("thumb") ? parts.at(-2) : parts.at(-1);
+function buildResultNarrative(destination: RankedDestination, isTop: boolean) {
+  const matchedTags = destination.matchedTags.slice(0, 3);
+  const tagText = matchedTags.length > 0 ? `「${matchedTags.join("」「")}」` : "今回の回答";
+  const opening = isTop ? "今回の回答では、" : "候補として見ると、";
 
-  if (!fileName) {
-    return imageUrl;
-  }
-
-  return `https://commons.wikimedia.org/wiki/Special:FilePath/${fileName}?width=900`;
+  return `${opening}${tagText}に近い要素が強く出ています。${destination.city}は、ただ名所を回るだけでなく、旅先で過ごす時間そのものを楽しみたい人に向いた行き先です。予算と日数を先に決めておくと、ホテル選びや航空券探しも迷いにくくなります。`;
 }
 
 function InfoBlock({ title, body }: { title: string; body: string }) {
