@@ -45,7 +45,7 @@ export function RecommendedHotels({ city, hotels, fallbackImageUrl }: Recommende
                     }}
                   />
                 )}
-                <span className="absolute left-2 top-2 rounded-full bg-ink/92 px-2.5 py-1 text-[11px] font-bold text-white shadow-sm ring-1 ring-white/70">
+                <span className="absolute left-2 top-2 rounded-full bg-[#2d2424] px-2.5 py-1.5 text-[11px] font-bold leading-none text-white shadow-[0_4px_14px_rgba(0,0,0,0.35)] ring-1 ring-white/75">
                   人気{index + 1}位
                 </span>
               </div>
