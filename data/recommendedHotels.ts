@@ -1,3 +1,5 @@
+import { destinationAffiliateLinks } from "@/data/destinationAffiliateLinks";
+
 export type RecommendedHotel = {
   name: string;
   area: string;
@@ -7,6 +9,16 @@ export type RecommendedHotel = {
   imageUrl?: string;
   imageAlt?: string;
 };
+
+function cityHotelLink(destinationId: string) {
+  const link = destinationAffiliateLinks[destinationId]?.hotel;
+
+  if (!link) {
+    throw new Error(`Missing hotel affiliate link for ${destinationId}`);
+  }
+
+  return link;
+}
 
 export const recommendedHotelsByDestination: Record<string, RecommendedHotel[]> = {
   taipei: [
@@ -338,6 +350,397 @@ export const recommendedHotelsByDestination: Record<string, RecommendedHotel[]> 
       priceNote: "落ち着いた雰囲気で泊まりたい人向け",
       summary: "観光の拠点にしながら、ホテルの世界観も楽しみたいマカオ旅に合わせやすい候補です。",
       linkUrl: "https://px.a8.net/svt/ejp?a8mat=4B3U7A+5Q00UY+2YGS+BW0YB&a8ejpredirect=https%3A%2F%2Fwww.skygate.co.jp%2Fhotel%2FHTLITM%2F1192813%2F%3FAgentCode%3DHTTOP",
+    },
+  ],
+  taichung: [
+    {
+      name: "台中駅・宮原眼科周辺ホテル",
+      area: "台中駅周辺",
+      priceNote: "初めての台中で移動しやすくしたい人向け",
+      summary: "鉄道やバスで動きやすく、宮原眼科や第二市場などの街歩きを組み込みやすいエリアです。",
+      linkUrl: cityHotelLink("taichung"),
+    },
+    {
+      name: "逢甲夜市周辺ホテル",
+      area: "逢甲",
+      priceNote: "夜市グルメを楽しみたい人向け",
+      summary: "夜まで気軽に食べ歩きを楽しみたい旅に向き、台中らしいローカル感を味わいやすい候補です。",
+      linkUrl: cityHotelLink("taichung"),
+    },
+    {
+      name: "草悟道・勤美周辺ホテル",
+      area: "草悟道",
+      priceNote: "カフェや雑貨店めぐりをしたい人向け",
+      summary: "緑の多い通りやおしゃれなカフェを楽しみやすく、ゆったりした女子旅にも合います。",
+      linkUrl: cityHotelLink("taichung"),
+    },
+  ],
+  "chiang-mai": [
+    {
+      name: "旧市街周辺ホテル",
+      area: "旧市街",
+      priceNote: "寺院巡りと街歩きを楽しみたい人向け",
+      summary: "寺院、カフェ、ナイトマーケットへ動きやすく、初めてのチェンマイにも選びやすいエリアです。",
+      linkUrl: cityHotelLink("chiang-mai"),
+    },
+    {
+      name: "ニマンヘミン周辺ホテル",
+      area: "ニマンヘミン",
+      priceNote: "カフェや雑貨、写真映えを重視したい人向け",
+      summary: "おしゃれなカフェやショップが多く、ゆっくり滞在しながら街を楽しみたい旅に向いています。",
+      linkUrl: cityHotelLink("chiang-mai"),
+    },
+    {
+      name: "リバーサイド周辺ホテル",
+      area: "ピン川周辺",
+      priceNote: "落ち着いたホテル時間も大切にしたい人向け",
+      summary: "中心部のにぎわいから少し離れ、食事やスパも含めて穏やかに過ごしたい旅に合います。",
+      linkUrl: cityHotelLink("chiang-mai"),
+    },
+  ],
+  prague: [
+    {
+      name: "旧市街広場周辺ホテル",
+      area: "旧市街",
+      priceNote: "王道観光を徒歩中心で楽しみたい人向け",
+      summary: "天文時計やカレル橋へ動きやすく、短い滞在でもプラハらしさを感じやすいエリアです。",
+      linkUrl: cityHotelLink("prague"),
+    },
+    {
+      name: "マラー・ストラナ周辺ホテル",
+      area: "マラー・ストラナ",
+      priceNote: "石畳の街並みと落ち着きを重視したい人向け",
+      summary: "プラハ城方面へ行きやすく、歴史ある街の雰囲気をゆっくり味わいたい旅に向いています。",
+      linkUrl: cityHotelLink("prague"),
+    },
+    {
+      name: "新市街周辺ホテル",
+      area: "新市街",
+      priceNote: "価格と移動のバランスを見たい人向け",
+      summary: "駅やトラムを使いやすく、観光だけでなく買い物や食事も組み合わせやすい候補です。",
+      linkUrl: cityHotelLink("prague"),
+    },
+  ],
+  budapest: [
+    {
+      name: "ドナウ川沿いホテル",
+      area: "ドナウ川周辺",
+      priceNote: "夜景と雰囲気を楽しみたい人向け",
+      summary: "国会議事堂やくさり橋の景色を楽しみやすく、ブダペストらしい滞在感があります。",
+      linkUrl: cityHotelLink("budapest"),
+    },
+    {
+      name: "ペスト中心部ホテル",
+      area: "ペスト側",
+      priceNote: "観光と食事を効率よく楽しみたい人向け",
+      summary: "カフェ、レストラン、ショッピングへ動きやすく、初めてのブダペストにも選びやすいエリアです。",
+      linkUrl: cityHotelLink("budapest"),
+    },
+    {
+      name: "ブダ城周辺ホテル",
+      area: "ブダ側",
+      priceNote: "歴史ある景色と落ち着きを重視したい人向け",
+      summary: "王宮の丘や漁夫の砦方面へ行きやすく、静かめの滞在を選びたい人に向いています。",
+      linkUrl: cityHotelLink("budapest"),
+    },
+  ],
+  lisbon: [
+    {
+      name: "バイシャ周辺ホテル",
+      area: "バイシャ",
+      priceNote: "初めてのリスボンで観光しやすくしたい人向け",
+      summary: "広場、トラム、レストランへ動きやすく、街歩きの拠点にしやすい中心エリアです。",
+      linkUrl: cityHotelLink("lisbon"),
+    },
+    {
+      name: "シアード周辺ホテル",
+      area: "シアード",
+      priceNote: "買い物とカフェ巡りを楽しみたい人向け",
+      summary: "坂道の街並みと洗練された店を楽しみやすく、女性向けメディアらしい旅に合います。",
+      linkUrl: cityHotelLink("lisbon"),
+    },
+    {
+      name: "アルファマ周辺ホテル",
+      area: "アルファマ",
+      priceNote: "ローカル感と写真映えを重視したい人向け",
+      summary: "細い路地や展望台を楽しみやすく、リスボンらしい情緒を味わいたい人に向いています。",
+      linkUrl: cityHotelLink("lisbon"),
+    },
+  ],
+  porto: [
+    {
+      name: "リベイラ周辺ホテル",
+      area: "リベイラ",
+      priceNote: "川沿いの景色を楽しみたい人向け",
+      summary: "ドウロ川沿いの街並みを楽しみやすく、写真映えするポルト旅にぴったりです。",
+      linkUrl: cityHotelLink("porto"),
+    },
+    {
+      name: "サン・ベント駅周辺ホテル",
+      area: "中心部",
+      priceNote: "観光と移動を効率よくしたい人向け",
+      summary: "駅や主要観光地へ動きやすく、短い滞在でも街歩きを組み立てやすい候補です。",
+      linkUrl: cityHotelLink("porto"),
+    },
+    {
+      name: "ヴィラ・ノヴァ・デ・ガイア周辺ホテル",
+      area: "ガイア側",
+      priceNote: "ワインと夜景を楽しみたい人向け",
+      summary: "ワインセラーや川越しの景色を楽しみやすく、少し大人っぽい滞在に向いています。",
+      linkUrl: cityHotelLink("porto"),
+    },
+  ],
+  malta: [
+    {
+      name: "バレッタ周辺ホテル",
+      area: "バレッタ",
+      priceNote: "歴史と街歩きを楽しみたい人向け",
+      summary: "世界遺産の街並みを歩きやすく、短い滞在でもマルタらしさを感じやすい拠点です。",
+      linkUrl: cityHotelLink("malta"),
+    },
+    {
+      name: "スリーマ周辺ホテル",
+      area: "スリーマ",
+      priceNote: "買い物と海沿い散歩を楽しみたい人向け",
+      summary: "フェリー移動や海沿いの散歩がしやすく、観光と滞在のバランスを取りやすいエリアです。",
+      linkUrl: cityHotelLink("malta"),
+    },
+    {
+      name: "セントジュリアンズ周辺ホテル",
+      area: "セントジュリアンズ",
+      priceNote: "リゾート感と食事を重視したい人向け",
+      summary: "レストランやホテル施設を楽しみやすく、華やかな滞在を選びたい人に合います。",
+      linkUrl: cityHotelLink("malta"),
+    },
+  ],
+  tallinn: [
+    {
+      name: "旧市街周辺ホテル",
+      area: "旧市街",
+      priceNote: "中世の街並みを満喫したい人向け",
+      summary: "城壁や石畳の街歩きを楽しみやすく、タリンの雰囲気を一番感じやすいエリアです。",
+      linkUrl: cityHotelLink("tallinn"),
+    },
+    {
+      name: "ロッテルマン地区周辺ホテル",
+      area: "ロッテルマン",
+      priceNote: "デザイン性と便利さを重視したい人向け",
+      summary: "新旧の建築が混ざるエリアで、カフェや買い物も楽しみたい旅に向いています。",
+      linkUrl: cityHotelLink("tallinn"),
+    },
+    {
+      name: "港周辺ホテル",
+      area: "タリン港周辺",
+      priceNote: "ヘルシンキとの周遊も考えたい人向け",
+      summary: "フェリー移動を組み合わせやすく、北欧・バルト周遊の拠点として使いやすい候補です。",
+      linkUrl: cityHotelLink("tallinn"),
+    },
+  ],
+  ljubljana: [
+    {
+      name: "旧市街周辺ホテル",
+      area: "旧市街",
+      priceNote: "小さな街を徒歩で楽しみたい人向け",
+      summary: "川沿いのカフェや市場へ動きやすく、リュブリャナの穏やかな雰囲気を楽しめます。",
+      linkUrl: cityHotelLink("ljubljana"),
+    },
+    {
+      name: "リュブリャナ駅周辺ホテル",
+      area: "駅周辺",
+      priceNote: "ブレッド湖など日帰り旅も考えたい人向け",
+      summary: "鉄道やバス移動を組み込みやすく、スロベニア周遊の入口として便利なエリアです。",
+      linkUrl: cityHotelLink("ljubljana"),
+    },
+    {
+      name: "ティヴォリ公園周辺ホテル",
+      area: "ティヴォリ公園",
+      priceNote: "静かでゆったりした滞在を選びたい人向け",
+      summary: "中心部に近すぎない落ち着きがあり、散歩や自然も楽しみたい人に向いています。",
+      linkUrl: cityHotelLink("ljubljana"),
+    },
+  ],
+  dubrovnik: [
+    {
+      name: "旧市街周辺ホテル",
+      area: "旧市街",
+      priceNote: "世界遺産の街並みを満喫したい人向け",
+      summary: "城壁歩きや石畳の路地を楽しみやすく、ドブロブニクらしい滞在感があります。",
+      linkUrl: cityHotelLink("dubrovnik"),
+    },
+    {
+      name: "ピレ門周辺ホテル",
+      area: "ピレ門",
+      priceNote: "観光しやすさを重視したい人向け",
+      summary: "旧市街入口に近く、日中の観光と夜の散策を組み合わせやすい候補です。",
+      linkUrl: cityHotelLink("dubrovnik"),
+    },
+    {
+      name: "ラパド周辺ホテル",
+      area: "ラパド",
+      priceNote: "海沿いリゾート感も楽しみたい人向け",
+      summary: "ビーチやホテル時間を大切にしながら、旧市街観光も組み合わせたい旅に合います。",
+      linkUrl: cityHotelLink("dubrovnik"),
+    },
+  ],
+  helsinki: [
+    {
+      name: "中央駅周辺ホテル",
+      area: "中央駅周辺",
+      priceNote: "初めてのヘルシンキで動きやすくしたい人向け",
+      summary: "鉄道、トラム、空港アクセスを組み立てやすく、短い滞在でも観光しやすい拠点です。",
+      linkUrl: cityHotelLink("helsinki"),
+    },
+    {
+      name: "デザイン地区周辺ホテル",
+      area: "デザイン地区",
+      priceNote: "北欧雑貨やカフェを楽しみたい人向け",
+      summary: "ショップやギャラリーを巡りやすく、落ち着いた北欧旅にぴったりです。",
+      linkUrl: cityHotelLink("helsinki"),
+    },
+    {
+      name: "港・マーケット広場周辺ホテル",
+      area: "港周辺",
+      priceNote: "海辺の景色と市場を楽しみたい人向け",
+      summary: "マーケット広場やフェリー移動に便利で、タリン日帰りも考えやすいエリアです。",
+      linkUrl: cityHotelLink("helsinki"),
+    },
+  ],
+  paris: [
+    {
+      name: "オペラ周辺ホテル",
+      area: "オペラ",
+      priceNote: "買い物と観光のしやすさを重視したい人向け",
+      summary: "百貨店やメトロ移動に便利で、初めてのパリでも予定を組み立てやすいエリアです。",
+      linkUrl: cityHotelLink("paris"),
+    },
+    {
+      name: "サンジェルマン周辺ホテル",
+      area: "サンジェルマン",
+      priceNote: "カフェと街歩きを楽しみたい人向け",
+      summary: "落ち着いた雰囲気のカフェやショップを巡りやすく、大人のパリ旅に合います。",
+      linkUrl: cityHotelLink("paris"),
+    },
+    {
+      name: "マレ地区周辺ホテル",
+      area: "マレ",
+      priceNote: "雑貨、アート、写真映えを重視したい人向け",
+      summary: "ブティックや美術館を巡りやすく、少し感度の高い街歩きを楽しみたい人に向いています。",
+      linkUrl: cityHotelLink("paris"),
+    },
+  ],
+  rome: [
+    {
+      name: "テルミニ駅周辺ホテル",
+      area: "テルミニ",
+      priceNote: "移動のしやすさを重視したい人向け",
+      summary: "鉄道や地下鉄で動きやすく、ローマ滞在の拠点として使いやすいエリアです。",
+      linkUrl: cityHotelLink("rome"),
+    },
+    {
+      name: "スペイン広場周辺ホテル",
+      area: "スペイン広場",
+      priceNote: "買い物と王道観光を楽しみたい人向け",
+      summary: "ブランド店や観光名所に近く、華やかなローマ旅を楽しみたい人に合います。",
+      linkUrl: cityHotelLink("rome"),
+    },
+    {
+      name: "ナヴォーナ広場周辺ホテル",
+      area: "ナヴォーナ",
+      priceNote: "歴史ある街歩きを重視したい人向け",
+      summary: "石畳の路地や広場を楽しみやすく、夜の散策も含めてローマらしさを味わえます。",
+      linkUrl: cityHotelLink("rome"),
+    },
+  ],
+  florence: [
+    {
+      name: "ドゥオモ周辺ホテル",
+      area: "ドゥオモ",
+      priceNote: "名所を徒歩で巡りたい人向け",
+      summary: "大聖堂や美術館へ動きやすく、短い滞在でもフィレンツェらしさを感じやすいエリアです。",
+      linkUrl: cityHotelLink("florence"),
+    },
+    {
+      name: "サンタ・マリア・ノヴェッラ駅周辺ホテル",
+      area: "駅周辺",
+      priceNote: "移動と観光のバランスを見たい人向け",
+      summary: "列車移動や周遊にも便利で、初めてのフィレンツェでも使いやすい候補です。",
+      linkUrl: cityHotelLink("florence"),
+    },
+    {
+      name: "オルトラルノ周辺ホテル",
+      area: "オルトラルノ",
+      priceNote: "落ち着いた工房街の雰囲気を楽しみたい人向け",
+      summary: "中心部から少し離れ、職人街やカフェを巡りたい大人旅に向いています。",
+      linkUrl: cityHotelLink("florence"),
+    },
+  ],
+  barcelona: [
+    {
+      name: "カタルーニャ広場周辺ホテル",
+      area: "中心部",
+      priceNote: "初めてのバルセロナで動きやすくしたい人向け",
+      summary: "地下鉄や空港バスを使いやすく、観光、買い物、食事を組み合わせやすい拠点です。",
+      linkUrl: cityHotelLink("barcelona"),
+    },
+    {
+      name: "グラシア通り周辺ホテル",
+      area: "グラシア通り",
+      priceNote: "建築と買い物を楽しみたい人向け",
+      summary: "カサ・バトリョ周辺へ動きやすく、街歩きの満足度が高いエリアです。",
+      linkUrl: cityHotelLink("barcelona"),
+    },
+    {
+      name: "サグラダ・ファミリア周辺ホテル",
+      area: "サグラダ・ファミリア",
+      priceNote: "有名観光地を近くで楽しみたい人向け",
+      summary: "朝や夕方のサグラダ・ファミリアを見に行きやすく、観光の特別感を出しやすい候補です。",
+      linkUrl: cityHotelLink("barcelona"),
+    },
+  ],
+  vienna: [
+    {
+      name: "リング通り周辺ホテル",
+      area: "リング通り",
+      priceNote: "王道観光と上品な街歩きを楽しみたい人向け",
+      summary: "国立歌劇場や美術館へ動きやすく、ウィーンらしい優雅な滞在に合います。",
+      linkUrl: cityHotelLink("vienna"),
+    },
+    {
+      name: "シュテファン大聖堂周辺ホテル",
+      area: "旧市街",
+      priceNote: "初めてのウィーンで観光しやすくしたい人向け",
+      summary: "旧市街の名所やカフェへ歩きやすく、短い滞在でも満足度を上げやすいエリアです。",
+      linkUrl: cityHotelLink("vienna"),
+    },
+    {
+      name: "マリアヒルファー通り周辺ホテル",
+      area: "マリアヒルフ",
+      priceNote: "買い物とコスパを重視したい人向け",
+      summary: "ショッピング通りに近く、中心部より少し価格を見ながら選びたい旅に向いています。",
+      linkUrl: cityHotelLink("vienna"),
+    },
+  ],
+  istanbul: [
+    {
+      name: "スルタンアフメット周辺ホテル",
+      area: "旧市街",
+      priceNote: "世界遺産と王道観光を楽しみたい人向け",
+      summary: "ブルーモスクやアヤソフィアへ動きやすく、初めてのイスタンブールに選びやすいエリアです。",
+      linkUrl: cityHotelLink("istanbul"),
+    },
+    {
+      name: "ガラタ・カラキョイ周辺ホテル",
+      area: "ガラタ",
+      priceNote: "カフェや海峡の雰囲気を楽しみたい人向け",
+      summary: "坂道の街並みやおしゃれな店を巡りやすく、写真映えする滞在に向いています。",
+      linkUrl: cityHotelLink("istanbul"),
+    },
+    {
+      name: "タクシム周辺ホテル",
+      area: "新市街",
+      priceNote: "食事と買い物、夜のにぎわいを重視したい人向け",
+      summary: "新市街の移動拠点にしやすく、レストランやショップを楽しみたい旅に合います。",
+      linkUrl: cityHotelLink("istanbul"),
     },
   ],
 };
