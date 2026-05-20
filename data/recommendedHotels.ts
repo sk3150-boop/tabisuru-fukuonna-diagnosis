@@ -96,6 +96,35 @@ export const recommendedHotelsByDestination: Record<string, RecommendedHotel[]> 
       imageAlt: "ザ ランドマーク バンコクのホテル画像",
     },
   ],
+  singapore: [
+    {
+      name: "パーク レジス バイ プリンス シンガポール",
+      area: "クラークキー",
+      priceNote: "観光と街歩きをバランスよく楽しみたい人向け",
+      summary: "MRT駅やチャイナタウンへ動きやすく、初シンガポールでも予定を組み立てやすい立地です。",
+      linkUrl: "https://www.skygate.co.jp/hotel/HTLITM/66072/?AgentCode=HTTOP",
+      imageUrl: "https://i.travelapi.com/lodging/5000000/4020000/4018200/4018160/709ffd51_z.jpg",
+      imageAlt: "パーク レジス バイ プリンス シンガポールのホテル画像",
+    },
+    {
+      name: "ジェン シンガポール オーチャードゲートウェイ バイ シャングリ・ラ",
+      area: "オーチャード",
+      priceNote: "買い物とホテルの快適さを重視したい人向け",
+      summary: "オーチャード中心で移動しやすく、ショッピングやカフェ巡りを楽しみたい旅に合います。",
+      linkUrl: "https://www.skygate.co.jp/hotel/HTLITM/685943/?AgentCode=HTTOP",
+      imageUrl: "https://i.travelapi.com/lodging/1000000/910000/906100/906062/2f0f95da_z.jpg",
+      imageAlt: "ジェン シンガポール オーチャードゲートウェイ バイ シャングリ・ラのホテル画像",
+    },
+    {
+      name: "グランド コプソーン ウォーターフロント ホテル シンガポール",
+      area: "シンガポール川",
+      priceNote: "落ち着いた川沿いステイを選びたい人向け",
+      summary: "中心部に近く、ホテル時間も大切にしながら観光を楽しみたい夫婦旅や家族旅に向いています。",
+      linkUrl: "https://www.skygate.co.jp/hotel/HTLITM/17123/?AgentCode=HTTOP",
+      imageUrl: "https://i.travelapi.com/lodging/1000000/560000/553900/553889/478ca87f_z.jpg",
+      imageAlt: "グランド コプソーン ウォーターフロント ホテル シンガポールのホテル画像",
+    },
+  ],
   bali: [
     {
       name: "インターコンチネンタル バリ サヌール リゾート by IHG",

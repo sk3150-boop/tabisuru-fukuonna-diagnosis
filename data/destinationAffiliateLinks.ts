@@ -12,6 +12,9 @@ export const destinationAffiliateLinks: Record<string, DestinationAffiliateLinks
   bangkok: {
     hotel: "https://www.skygate.co.jp/hotel/HTLCTY/BKK/?AgentCode=HTTOP",
   },
+  singapore: {
+    hotel: "https://www.skygate.co.jp/hotel/HTLCTY/SIN/?AgentCode=HTTOP",
+  },
   bali: {
     hotel: "https://www.skygate.co.jp/hotel/list?regionId=1054&form=research&sort=1&AgentCode=HTTOP&preAgentCode=HTTOP",
   },
